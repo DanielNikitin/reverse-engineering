@@ -1,0 +1,98 @@
+================================================================================
+MSVC COMPILATION & LINKER FLAGS (Production / Anti-Forensics / Kernel x64)
+================================================================================
+
+1. KERNEL DRIVER (Manual-Mapped / Freestanding)
+--------------------------------------------------------------------------------
+Command-line invocation for cl.exe & link.exe:
+
+[CL.EXE - COMPILER FLAGS]
+cl.exe /c /O2 /Oi /Ot /std:c++20 /kernel /GR- /GS- /EHs-c- /GF /Gy /W4 /nologo \
+       /D_AMD64_ /D_KERNEL_MODE /DNDIS60=1 /DDEVL=1 \
+       /I"$(VCToolsInstallDir)include" \
+       /I"$(WindowsSdkDir)Include\$(TargetPlatformVersion)\km" \
+       /I"$(WindowsSdkDir)Include\$(TargetPlatformVersion)\shared" \
+       driver_main.cpp
+
+Explanation of critical flags:
+  /kernel       - Generates code conforming to Windows kernel requirements.
+  /std:c++20    - Enables modern ISO C++20 language features.
+  /GR-          - Disables Run-Time Type Information (RTTI), removing typeinfo symbols.
+  /GS-          - Disables buffer security check cookies (__security_cookie), eliminating
+                  dependencies on CRT initialization stubs in mapped memory.
+  /EHs-c-       - Disables C++ exception handling unwinding tables.
+  /Gy           - Enables function-level linking (eliminates unreferenced code).
+  /GF           - Enables string pooling in read-only memory.
+
+[LINK.EXE - LINKER FLAGS]
+link.exe /NOLOGO /DRIVER /SUBSYSTEM:NATIVE /ENTRY:DriverEntry \
+         /NODEFAULTLIB /OPT:REF /OPT:ICF \
+         /DEBUG:NONE \
+         /DYNAMICBASE /FIXED:NO \
+         /PDBALTPATH:%_PDB% \
+         /MERGE:_PAGE=PAGE /MERGE:_TEXT=.text \
+         ntoskrnl.lib hal.lib \
+         driver_main.obj /OUT:dxk_sync_host.sys
+
+Explanation of critical anti-forensics linker flags:
+  /DEBUG:NONE       - Completely excludes debug directory (IMAGE_DIRECTORY_ENTRY_DEBUG)
+                      and prevents writing PDB paths (e.g. C:\Users\...\driver.pdb) into the binary.
+  /NODEFAULTLIB     - Strips all static MSVCRT/LIBC dependencies for a pure freestanding binary.
+  /OPT:REF /OPT:ICF - Eliminates unreferenced functions and folds identical COMDATs.
+  /SUBSYSTEM:NATIVE - Native Windows kernel subsystem image.
+
+[VISUAL STUDIO PROJECT (.vcxproj) CONFIGURATION SNIPPET]
+<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <DriverType>KMDF</DriverType>
+  <KmdfVersion>1.15</KmdfVersion>
+</PropertyGroup>
+<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ClCompile>
+    <LanguageStandard>stdcpp20</LanguageStandard>
+    <RuntimeTypeInfo>false</RuntimeTypeInfo>
+    <BufferSecurityCheck>false</BufferSecurityCheck>
+    <ExceptionHandling>false</ExceptionHandling>
+    <Optimization>MaxSpeed</Optimization>
+    <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    <IntrinsicFunctions>true</IntrinsicFunctions>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PreprocessorDefinitions>_AMD64_;_KERNEL_MODE;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+  </ClCompile>
+  <Link>
+    <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+    <GenerateDebugInformation>false</GenerateDebugInformation>
+    <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+    <SubSystem>Native</SubSystem>
+    <Driver>Driver</Driver>
+    <AdditionalDependencies>ntoskrnl.lib;hal.lib;%(AdditionalDependencies)</AdditionalDependencies>
+  </Link>
+</ItemDefinitionGroup>
+
+--------------------------------------------------------------------------------
+2. USER-MODE CLIENT (C++20 Wrapper)
+--------------------------------------------------------------------------------
+Command-line invocation:
+
+[CL.EXE - COMPILER FLAGS]
+cl.exe /O2 /Oi /std:c++20 /GR- /W4 /EHsc /MD /nologo \
+       /I. memory_bridge.cpp /c
+
+[LINK.EXE - LINKER FLAGS]
+link.exe /NOLOGO /SUBSYSTEM:CONSOLE \
+         gdi32.lib user32.lib \
+         memory_bridge.obj
+
+[VISUAL STUDIO PROJECT (.vcxproj) CONFIGURATION SNIPPET]
+<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ClCompile>
+    <LanguageStandard>stdcpp20</LanguageStandard>
+    <RuntimeTypeInfo>false</RuntimeTypeInfo>
+    <Optimization>MaxSpeed</Optimization>
+    <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+    <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+  </ClCompile>
+  <Link>
+    <SubSystem>Console</SubSystem>
+    <AdditionalDependencies>gdi32.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+  </Link>
+</ItemDefinitionGroup>

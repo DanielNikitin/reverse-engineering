@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="core"><UniqueIdentifier>{a1000001-0001-0001-0001-000000000001}</UniqueIdentifier></Filter>
+    <Filter Include="scanner"><UniqueIdentifier>{a1000002-0001-0001-0001-000000000002}</UniqueIdentifier></Filter>
+    <Filter Include="decryption"><UniqueIdentifier>{a1000003-0001-0001-0001-000000000003}</UniqueIdentifier></Filter>
+    <Filter Include="writer"><UniqueIdentifier>{a1000004-0001-0001-0001-000000000004}</UniqueIdentifier></Filter>
+    <Filter Include="runtime"><UniqueIdentifier>{a1000005-0001-0001-0001-000000000005}</UniqueIdentifier></Filter>
+    <Filter Include="hde"><UniqueIdentifier>{a1000006-0001-0001-0001-000000000006}</UniqueIdentifier></Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\core\core.cpp"><Filter>core</Filter></ClCompile>
+    <ClCompile Include="src\scanner\scanner.cpp"><Filter>scanner</Filter></ClCompile>
+    <ClCompile Include="src\decryption\decryption.cpp"><Filter>decryption</Filter></ClCompile>
+    <ClCompile Include="src\writer\writer.cpp"><Filter>writer</Filter></ClCompile>
+    <ClCompile Include="src\runtime\util.cpp"><Filter>runtime</Filter></ClCompile>
+    <ClCompile Include="src\hde\hde64.cpp"><Filter>hde</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\core\core.hpp"><Filter>core</Filter></ClInclude>
+    <ClInclude Include="src\scanner\scanner.hpp"><Filter>scanner</Filter></ClInclude>
+    <ClInclude Include="src\decryption\decryption.hpp"><Filter>decryption</Filter></ClInclude>
+    <ClInclude Include="src\writer\writer.hpp"><Filter>writer</Filter></ClInclude>
+    <ClInclude Include="src\runtime\runtime.hpp"><Filter>runtime</Filter></ClInclude>
+    <ClInclude Include="src\runtime\il2cpp_lib.hpp"><Filter>runtime</Filter></ClInclude>
+    <ClInclude Include="src\runtime\util.hpp"><Filter>runtime</Filter></ClInclude>
+    <ClInclude Include="src\hde\hde64.h"><Filter>hde</Filter></ClInclude>
+    <ClInclude Include="src\hde\table64.h"><Filter>hde</Filter></ClInclude>
+  </ItemGroup>
+</Project>

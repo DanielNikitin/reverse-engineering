@@ -1,0 +1,25 @@
+LIBRARY ntoskrnl.exe
+EXPORTS
+    ExFreePool
+    ExFreePoolWithTag
+    IoAllocateMdl
+    IoCompleteRequest = IofCompleteRequest
+    IofCompleteRequest
+    IoFreeMdl
+    IoGetCurrentIrpStackLocation
+    IoGetDeviceObjectPointer
+    MmAllocatePagesForMdlEx
+    MmCopyMemory
+    MmFreePagesFromMdl
+    MmGetPhysicalMemoryRanges
+    MmMapIoSpace
+    MmMapLockedPagesSpecifyCache
+    MmUnmapIoSpace
+    ObDereferenceObject = ObfDereferenceObject
+    ObfDereferenceObject
+    PsInitialSystemProcess DATA
+    RtlGetVersion
+    RtlInitUnicodeString
+    __C_specific_handler
+    memcpy
+    memset

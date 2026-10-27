@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="beginners-overlay-base/beginners-overlay-base.vcxproj" Id="7abc3f01-d81a-4cad-9601-78d20c3436ee" />
+</Solution>
