@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\filetimes.obj",
+            "outputs": [
+                "x64\\Debug\\filetimes.hxx.obj.dt.module.json",
+                "x64\\Debug\\filetimes.hxx.obj.dt.d.json"
+            ],
+            "requires": []
+        }
+    ]
+}
