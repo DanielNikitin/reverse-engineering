@@ -1,0 +1,12 @@
+We are working on a script (software) for a Roblox place called Upgrade Per Kill Block PvP. Your task is to study it down to the smallest detail. Look, our script will be based on the Obsidian library, which will be our GUI. Let's make 5 features for now, and they must work on both PC and mobile (I am the tester).
+
+Rage tab:
+1. The first one is related to Hitbox. It will be responsible for expanding the hitbox for more accurate hits. The maximum size is 50, and we need to make it visible on the player. There should be a choice of shapes like square, sphere, and pyramid, as well as an option to change the color.
+2. Kill Aura: check out some Minecraft videos to see what it looks like, how it attacks, and what settings it has, then add these presets: 1. Legit (as the name implies, undetected/closet) 2. Rage (very blatant).
+
+Visual tab:
+1. ESP: it is very important that it looks clean and beautiful. What sections will there be? Box, Corner, Chams (body fill), Player Name, Arrows to player, and Player HP. Everything should be color-customizable. For the player's HP, there should be two options to choose from (or both at once): a bar next to the box, or above the nickname. (Who will it work on? There should be a list of players on the server to choose from).
+
+Legit tab:
+1. Next is Triggerbot: it should adjust to the game's attack delay and cooldown. Also, there should be a choice of which player it will work on.
+2. Aimbot: sections include Wallcheck, Smooth (strength from 1-10), FOV (size, color customization, visibility toggle, fill), and Target (there will also be a ready-made list of players to select who it will work on)."

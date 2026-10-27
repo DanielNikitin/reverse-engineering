@@ -1,0 +1,19 @@
+Simple Checker
+https://t.me/simplechecker_bot
+
+– Email: penguinking1120@gmail.com
+– Plan: pro
+– Expires: 2026-10-27
+– Cookies: C:\Users\Administrator\Downloads\acr1 28.09\US-168.182.77.218--B906-1537971-27-09-2026-14-44-56\Cookies\Chrome_0.txt
+
+cursor.com	FALSE	/	TRUE	1822053316	cursor_anonymous_id	76f99fb9-f9d5-420a-999a-772b4cbcfdd1
+cursor.com	FALSE	/	TRUE	1795701457	WorkosCursorSessionToken	user_01M3HJE3D70XTMHKCR5W4CN6AT%3A%3AeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnb29nbGUtb2F1dGgyfHVzZXJfMDFNM0hKRTNENzBYVE1IS0NSNVc0Q042QVQiLCJ0aW1lIjoiMTc5MDUxNzM4MyIsInJhbmRvbW5lc3MiOiI3Zjc3ODA5Ni1jNTJkLTRjZmMiLCJleHAiOjE3OTU3MDEzODMsImlzcyI6Imh0dHBzOi8vYXV0aGVudGljYXRpb24uY3Vyc29yLnNoIiwic2NvcGUiOiJvcGVuaWQgcHJvZmlsZSBlbWFpbCBvZmZsaW5lX2FjY2VzcyIsImF1ZCI6Imh0dHBzOi8vY3Vyc29yLmNvbSIsInR5cGUiOiJ3ZWIiLCJ3b3Jrb3NTZXNzaW9uSWQiOiJzZXNzaW9uXzAxTTNISkUzVEYwVFA5REoyQVdRWkpOVFFTIn0.NSJwBU_lrT665yt76cDgjNOYQUYq5HK_kinzEa58oz0
+cursor.com	FALSE	/	TRUE	1793109472	cursor_marketing_attribution_storage_allowed	1
+cursor.com	FALSE	/	FALSE	1793163152	generaltranslation.locale-routing-enabled	false
+cursor.com	FALSE	/	TRUE	1793109472	logoCountry	US
+cursor.com	FALSE	/	TRUE	1795701457	workos_id	user_01M3HJE3D70XTMHKCR5W4CN6AT
+cursor.com	FALSE	/	TRUE	1790605836	csrf-token	c4615554ec0bb256ab6af432ddf855a5d7df9fadc03effdbc21a73cc14a751be
+cursor.com	FALSE	/	TRUE	1822055436	cursor_agents_connect_scm_upsell	1
+cursor.com	FALSE	/	TRUE	1793111436	cursor_agents_nav_gates	3.0..
+cursor.com	FALSE	/	FALSE	1793163152	generaltranslation.referrer-locale	en-US
+cursor.com	FALSE	/	FALSE	1822055493	_dd_s	aid=11cef77a-8f2e-4dc8-a928-fb92a1811835&rum=2&id=3a8b90e5-4d24-463c-a3ed-9e656559a41c&created=1790517503240&expire=1790520393583
