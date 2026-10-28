@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿// Network Interface Card
+
+#pragma once
 #include "helpers.hxx"
 #include "../../../impl/pdb_offsets.hxx"
 
@@ -18,6 +20,7 @@ namespace spoof::nic {
 
     static ndis_off_t s_off;
     static std::uint8_t s_spoofed_mac[6]{};
+    static std::uint8_t s_first_mac[6]{};
     static bool s_hook_installed = false;
 
     // Original bytes backup (for unhook if needed)
@@ -128,6 +131,8 @@ namespace spoof::nic {
         // Generate one spoofed MAC for this session
         std::uint8_t dummy[6]{};
         generate_mac(s_spoofed_mac, dummy);
+        memcpy(s_first_mac, s_spoofed_mac, 6);
+
         logging::print("nic: spoofed MAC = %02X:%02X:%02X:%02X:%02X:%02X",
             s_spoofed_mac[0], s_spoofed_mac[1], s_spoofed_mac[2],
             s_spoofed_mac[3], s_spoofed_mac[4], s_spoofed_mac[5]);

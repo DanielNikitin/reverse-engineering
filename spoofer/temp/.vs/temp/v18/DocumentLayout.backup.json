@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Pivozavr\\Documents\\GitHub\\reverse-engineering\\spoofer\\temp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D2C2DF48-ED01-4C8E-96A3-8A501FB96D75}|temp\\temp.vcxproj|C:\\Users\\Pivozavr\\Documents\\GitHub\\reverse-engineering\\spoofer\\temp\\temp\\workspace\\core\\spoof\\nic.hxx||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D2C2DF48-ED01-4C8E-96A3-8A501FB96D75}|temp\\temp.vcxproj|solutionrelative:temp\\workspace\\core\\spoof\\nic.hxx||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "nic.hxx",
+              "DocumentMoniker": "C:\\Users\\Pivozavr\\Documents\\GitHub\\reverse-engineering\\spoofer\\temp\\temp\\workspace\\core\\spoof\\nic.hxx",
+              "RelativeDocumentMoniker": "temp\\workspace\\core\\spoof\\nic.hxx",
+              "ToolTip": "C:\\Users\\Pivozavr\\Documents\\GitHub\\reverse-engineering\\spoofer\\temp\\temp\\workspace\\core\\spoof\\nic.hxx",
+              "RelativeToolTip": "temp\\workspace\\core\\spoof\\nic.hxx",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAwwIYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-27T23:38:03.961Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

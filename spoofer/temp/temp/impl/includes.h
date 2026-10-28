@@ -42,4 +42,6 @@
 
 #include <workspace/utility/exit.hxx>
 
+#include <workspace/core/spoof/helpers.hxx>
+
 #include <workspace/core/spoof/spoof.hxx>
